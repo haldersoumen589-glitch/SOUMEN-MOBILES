@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SOUMEN MOBILES — Online Shopping & Delivery</title>
+
+<style>
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --blue:#155eef;
+    --blue-dark:#0b3fa8;
+    --yellow:#ffd600;
+    --dark:#111827;
+    --gray:#667085;
+    --light:#f5f7fb;
+    --white:#ffffff;
+    --border:#e5e7eb;
+    --green:#12b76a;
+    --red:#ef4444;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--light);
+    color:var(--dark);
+}
+
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   TOP OFFER BAR
+===================================================== */
+
+.top-bar{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:9px 15px;
+    font-size:13px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header{
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 12px rgba(0,0,0,.07);
+}
+
+.navbar{
+    max-width:1400px;
+    margin:auto;
+    min-height:76px;
+    padding:12px 25px;
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+
+/* LOGO */
+
+.logo{
+    min-width:210px;
+    text-decoration:none;
+}
+
+.logo-main{
+    font-size:25px;
+    font-weight:1000;
+    color:var(--blue);
+    letter-spacing:-1px;
+}
+
+.logo-sub{
+    display:block;
+    color:var(--dark);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+
+/* SEARCH */
+
+.search-area{
+    flex:1;
+    position:relative;
+}
+
+.search-area input{
+    width:100%;
+    height:46px;
+
+    border:1px solid var(--border);
+    border-radius:12px;
+
+    padding:0 55px 0 17px;
+
+    outline:none;
+    background:#f8fafc;
+
+    font-size:14px;
+}
+
+.search-area input:focus{
+    border-color:var(--blue);
+    background:white;
+}
+
+.search-button{
+    position:absolute;
+    right:5px;
+    top:5px;
+
+    width:36px;
+    height:36px;
+
+    border:0;
+    border-radius:9px;
+
+    background:var(--blue);
+    color:white;
+
+    font-size:18px;
+}
+
+
+/* HEADER BUTTONS */
+
+.header-btn{
+    border:0;
+    background:white;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.cart-button{
+    background:var(--dark);
+    color:white;
+
+    padding:12px 17px;
+    border-radius:11px;
+
+    border:0;
+    font-weight:bold;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    background:
+        linear-gradient(135deg,#eef4ff,#ffffff);
+
+    padding:70px 6%;
+
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+
+    align-items:center;
+    gap:50px;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.hero-label{
+    display:inline-block;
+
+    background:#e8efff;
+    color:var(--blue);
+
+    padding:8px 13px;
+    border-radius:30px;
+
+    font-size:12px;
+    font-weight:900;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,72px);
+    line-height:1;
+
+    letter-spacing:-3px;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero p{
+    color:var(--gray);
+    font-size:18px;
+    line-height:1.7;
+
+    max-width:650px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:28px;
+    flex-wrap:wrap;
+}
+
+.primary-btn{
+    border:0;
+
+    background:var(--blue);
+    color:white;
+
+    padding:14px 23px;
+
+    border-radius:11px;
+
+    font-weight:900;
+}
+
+.primary-btn:hover{
+    background:var(--blue-dark);
+}
+
+.secondary-btn{
+    border:1px solid var(--border);
+
+    background:white;
+
+    padding:14px 23px;
+
+    border-radius:11px;
+
+    font-weight:900;
+}
+
+
+/* HERO PRODUCT DISPLAY */
+
+.hero-display{
+    min-height:350px;
+
+    border-radius:35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #155eef,
+            #6b8cff
+        );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:105px;
+
+    box-shadow:
+        0 30px 70px rgba(21,94,239,.25);
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+.section{
+    max-width:1400px;
+    margin:auto;
+
+    padding:55px 25px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.section-title h2{
+    font-size:30px;
+}
+
+.section-title span{
+    color:var(--gray);
+    font-size:14px;
+}
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+.categories{
+    display:grid;
+    grid-template-columns:
+        repeat(8,1fr);
+
+    gap:15px;
+}
+
+.category{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:23px 10px;
+
+    text-align:center;
+
+    transition:.2s;
+
+    border:0;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.08);
+}
+
+.category-icon{
+    font-size:36px;
+    margin-bottom:10px;
+}
+
+.category-name{
+    font-size:13px;
+    font-weight:900;
+}
+
+
+/* =====================================================
+   FILTER BAR
+===================================================== */
+
+.filters{
+    display:flex;
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:25px;
+}
+
+.filter-btn,
+.sort-select{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    padding:10px 14px;
+
+    font-weight:bold;
+}
+
+.filter-btn.active{
+    background:var(--blue);
+    color:white;
+    border-color:var(--blue);
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:20px;
+}
+
+.product-card{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    transition:.2s;
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.08);
+}
+
+.product-image{
+    height:220px;
+
+    background:#f0f3f9;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:82px;
+
+    position:relative;
+}
+
+.discount{
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    background:#fee2e2;
+
+    color:#dc2626;
+
+    padding:6px 8px;
+
+    border-radius:7px;
+
+    font-size:11px;
+
+    font-weight:900;
+}
+
+.wishlist{
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    width:35px;
+    height:35px;
+
+    border-radius:50%;
+
+    border:0;
+
+    background:white;
+
+    font-size:18px;
+}
+
+.product-info{
+    padding:18px;
+}
+
+.product-category{
+    color:var(--blue);
+
+    text-transform:uppercase;
+
+    font-size:10px;
+
+    font-weight:900;
+}
+
+.product-name{
+    font-size:16px;
+
+    line-height:1.35;
+
+    margin:7px 0;
+}
+
+.rating{
+    color:#f59e0b;
+
+    font-size:13px;
+}
+
+.rating span{
+    color:var(--gray);
+}
+
+.price{
+    font-size:21px;
+
+    font-weight:1000;
+
+    margin:10px 0;
+}
+
+.old-price{
+    font-size:13px;
+
+    color:#98a2b3;
+
+    text-decoration:line-through;
+
+    margin-left:6px;
+}
+
+.add-cart{
+    width:100%;
+
+    border:0;
+
+    background:var(--dark);
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    font-weight:900;
+}
+
+.add-cart:hover{
+    background:var(--blue);
+}
+
+
+/* =====================================================
+   PROMOTIONAL BANNER
+===================================================== */
+
+.promo{
+    max-width:1400px;
+
+    margin:20px auto 50px;
+
+    padding:45px 35px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111827,
+            #263b70
+        );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+.promo h2{
+    font-size:32px;
+}
+
+.promo p{
+    color:#cbd5e1;
+
+    margin-top:8px;
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:17px;
+}
+
+.feature{
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:17px;
+
+    padding:24px;
+}
+
+.feature-icon{
+    font-size:28px;
+}
+
+.feature h3{
+    margin:10px 0 7px;
+
+    font-size:17px;
+}
+
+.feature p{
+    color:var(--gray);
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#0b1020;
+
+    color:white;
+
+    padding:55px 6%;
+}
+
+.footer-grid{
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:40px;
+}
+
+.footer-brand{
+    font-size:25px;
+
+    font-weight:1000;
+
+    color:#4f83ff;
+}
+
+.footer-description{
+    color:#aab2c5;
+
+    margin-top:12px;
+
+    line-height:1.7;
+
+    max-width:400px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer li{
+    list-style:none;
+
+    color:#aab2c5;
+
+    line-height:2.1;
+
+    font-size:14px;
+}
+
+.copyright{
+    max-width:1400px;
+    margin:35px auto 0;
+
+    padding-top:22px;
+
+    border-top:1px solid #293149;
+
+    color:#8892a8;
+
+    font-size:13px;
+}
+
+
+/* =====================================================
+   CART MODAL
+===================================================== */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.65);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:2000;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    background:white;
+
+    width:min(650px,100%);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    border-radius:22px;
+
+    padding:25px;
+}
+
+.modal-header{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:15px;
+}
+
+.close-btn{
+    width:38px;
+    height:38px;
+
+    border:0;
+
+    background:#f1f2f5;
+
+    border-radius:50%;
+
+    font-size:20px;
+}
+
+.cart-item{
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 0;
+
+    border-bottom:1px solid var(--border);
+}
+
+.cart-icon{
+    font-size:35px;
+}
+
+.cart-details{
+    flex:1;
+}
+
+.cart-details h4{
+    font-size:14px;
+
+    margin-bottom:5px;
+}
+
+.cart-details p{
+    color:var(--gray);
+
+    font-size:13px;
+}
+
+.quantity{
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+}
+
+.quantity button{
+    width:30px;
+    height:30px;
+
+    border:0;
+
+    background:#edf0f5;
+
+    border-radius:7px;
+}
+
+.cart-total{
+    font-size:21px;
+
+    font-weight:1000;
+
+    margin-top:20px;
+}
+
+.checkout-btn{
+    width:100%;
+
+    margin-top:18px;
+
+    padding:14px;
+
+    border:0;
+
+    background:var(--blue);
+
+    color:white;
+
+    border-radius:11px;
+
+    font-weight:900;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    background:var(--dark);
+
+    color:white;
+
+    padding:14px 20px;
+
+    border-radius:11px;
+
+    display:none;
+
+    z-index:5000;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.2);
+}
+
+.toast.show{
+    display:block;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .categories{
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+
+    .products{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .features{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:800px){
+
+    .navbar{
+        gap:12px;
+        padding:12px 15px;
+    }
+
+    .logo{
+        min-width:auto;
+    }
+
+    .logo-main{
+        font-size:20px;
+    }
+
+    .header-btn{
+        display:none;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+
+        padding:50px 25px;
+    }
+
+    .hero-display{
+        min-height:230px;
+        font-size:75px;
+    }
+
+    .products{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+}
+
+
+@media(max-width:550px){
+
+    .top-bar{
+        font-size:11px;
+    }
+
+    .search-area{
+        display:none;
+    }
+
+    .navbar{
+        justify-content:space-between;
+    }
+
+    .cart-button{
+        padding:10px 13px;
+    }
+
+    .hero h1{
+        font-size:43px;
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .categories{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .promo{
+        margin:10px 15px 35px;
+        padding:30px 22px;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    .section{
+        padding:40px 15px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="top-bar">
+
+    ⚡ Special Offers • Free Delivery on Orders Above ₹999
+    • Secure Payments • Easy Returns
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<nav class="navbar">
+
+    <a href="#" class="logo">
+
+        <div class="logo-main">
+            SOUMEN MOBILES
+        </div>
+
+        <span class="logo-sub">
+            ELECTRONICS • ACCESSORIES • MORE
+        </span>
+
+    </a>
+
+
+    <div class="search-area">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search mobiles, laptops, TVs, accessories & more..."
+            oninput="renderProducts()"
+        >
+
+        <button
+            class="search-button"
+            onclick="renderProducts()"
+        >
+            🔍
+        </button>
+
+    </div>
+
+
+    <button
+        class="header-btn"
+        onclick="showToast('Login system can be connected to your backend.')"
+    >
+        👤 Account
+    </button>
+
+
+    <button
+        class="cart-button"
+        onclick="openCart()"
+    >
+        🛒 Cart
+        (<span id="cartCount">0</span>)
+    </button>
+
+</nav>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            SOUMEN MOBILES — ONLINE SHOPPING
+        </span>
+
+        <h1>
+            Shop Everything.<br>
+            <span>Delivered Fast.</span>
+        </h1>
+
+        <p>
+            Buy smartphones, mobile cases, laptops, TVs,
+            headphones, appliances, computer accessories
+            and everyday products — all from SOUMEN MOBILES.
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="scrollToShop()"
+            >
+                Shop Now →
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="showToast('Delivery availability can be connected to your delivery API.')"
+            >
+                📍 Check Delivery
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-display">
+
+        📱 💻 📺 📦
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <h2>
+            Shop by Category
+        </h2>
+
+        <span>
+            Explore our products
+        </span>
+
+    </div>
+
+
+    <div
+        class="categories"
+        id="categoryContainer"
+    ></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section
+    class="section"
+    id="shop"
+>
+
+    <div class="section-title">
+
+        <h2>
+            Popular Products
+        </h2>
+
+        <span id="resultCount">
+            0 products
+        </span>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <button
+            class="filter-btn active"
+            onclick="setCategory('All',this)"
+        >
+            All
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="setCategory('Mobiles',this)"
+        >
+            Mobiles
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="setCategory('Cases',this)"
+        >
+            Cases
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="setCategory('Laptops',this)"
+        >
+            Laptops
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="setCategory('TV',this)"
+        >
+            TV
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="setCategory('Audio',this)"
+        >
+            Audio
+        </button>
+
+        <button
+            class="filter-btn"
+            onclick="setCategory('Appliances',this)"
+        >
+            Appliances
+        </button>
+
+
+        <select
+            class="sort-select"
+            id="sortSelect"
+            onchange="renderProducts()"
+        >
+
+            <option value="featured">
+                Featured
+            </option>
+
+            <option value="low">
+                Price: Low to High
+            </option>
+
+            <option value="high">
+                Price: High to Low
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- PRODUCT GRID -->
+
+    <div
+        class="products"
+        id="productContainer"
+    ></div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROMO
+===================================================== -->
+
+<div class="promo">
+
+    <div>
+
+        <h2>
+            🔥 Mega Electronics Deals
+        </h2>
+
+        <p>
+            Save more on smartphones, laptops,
+            TVs and accessories.
+        </p>
+
+    </div>
+
+
+    <button
+        class="primary-btn"
+        onclick="scrollToShop()"
+    >
+        Explore Deals
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     FEATURES
+===================================================== -->
+
+<section class="section">
+
+    <div class="features">
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🚚
+            </div>
+
+            <h3>
+                Fast Delivery
+            </h3>
+
+            <p>
+                Get your orders delivered directly
+                to your doorstep.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                🔒
+            </div>
+
+            <h3>
+                Secure Payment
+            </h3>
+
+            <p>
+                Support for UPI, cards, net banking
+                and Cash on Delivery.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                ↩️
+            </div>
+
+            <h3>
+                Easy Returns
+            </h3>
+
+            <p>
+                Simple return and replacement
+                process.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-icon">
+                📞
+            </div>
+
+            <h3>
+                Customer Support
+            </h3>
+
+            <p>
+                Contact SOUMEN MOBILES for
+                order assistance.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ========
